@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Lesson3 {
     /**
      * Задание 3
@@ -6,14 +8,15 @@ public class Lesson3 {
      */
 
     public static void main(String[] args) {
-        isoscelesTriangle();
+        Scanner scanner = new Scanner(System.in);
+        isoscelesTriangle(scanner.nextInt());
         System.out.println();
-        isoscelesTriangleEmpty();
+        isoscelesTriangleEmpty(scanner.nextInt());
     }
 
-    public static void isoscelesTriangle() {
-        for (int i = 0; i < 8; i++) {
-            for (int j = i; j < 8; j++) { //левый отступ
+    public static void isoscelesTriangle(int weight) {
+        for (int i = 0; i < weight; i++) {
+            for (int j = i; j < weight; j++) { //левый отступ
                 System.out.print(" ");
             }
             for (int j = -i; j < 1; j++){ // левая половина
@@ -27,45 +30,45 @@ public class Lesson3 {
 
     }
 
-    public static void isoscelesTriangleEmpty() {
-        for (int i = 0; i < 8; i++) {
-            for (int j = i; j < 8; j++) { //левый отступ
+    public static void isoscelesTriangleEmpty(int weight) {
+        for (int i = 0; i < weight; i++) {
+            for (int j = i; j < weight; j++) { //левый отступ
                 System.out.print(" ");
             }
 
             for (int j = -i; j < 1; j++){ //левая внешняя сторона
                 System.out.print("*");
                 for (int k = -i + 1; k < 0; k++) { //внутренняя часть левой стороны
-                    if (i == 7) {
+                    if (i == weight-1) {
                         break;
                     } else {
                         System.out.print(" ");
                     }
                 }
 
-                if (i != 7) {
+                if (i != weight-1) {
                     break;
                 }
             }
-            for (int j = i; j < 8; j++){
+            for (int j = i; j < weight; j++){
 
-                for (int k = -i + 1; k < 0; k++) { // внутренняя часть правой стороны
-                    if (i == 7) {
+                for (int k = -i; k < 0; k++) { // внутренняя часть правой стороны
+                    if (i == weight-1) {
                         break;
                     } else {
                         System.out.print(" ");
                     }
                 }
                 for (int l = -i; l < 0; l++){
-                    if (i < 7) {
-                        System.out.print(" *"); // правая внешняя сторона
+                    if (i < weight-1) {
+                        System.out.print("*"); // правая внешняя сторона
                         break;
                     } else {
                         System.out.print("*"); // правая нижняя сторона
                     }
 
                 }
-                if (i != 7) {
+                if (i != weight-1) {
                     break;
                 }
 

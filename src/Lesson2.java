@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Lesson2 {
     /**
      * Задание 2
@@ -7,32 +9,33 @@ public class Lesson2 {
      */
 
     public static void main(String[] args) {
-        rightTriangle();
+        Scanner scanner = new Scanner(System.in);
+        rightTriangle(scanner.nextInt());
         System.out.println();
-        rightTriangleGape();
+        rightTriangleGape(scanner.nextInt());
     }
 
-    public static void rightTriangle() {
-        for (int i = 0; i < 8; i++) {
+    public static void rightTriangle(int weight) {
+        for (int i = 0; i < weight; i++) {
             for (int j = -i; j < 1; j++) { //отступ
                 System.out.print(" ");
             }
-            for (int j = i; j < 8; j++){ //тело
+            for (int j = i; j < weight; j++){ //тело
                 System.out.print("*");
             }
             System.out.print("\n");
         }
     }
 
-    public static void rightTriangleGape() {
-        for (int i = 0; i < 8; i++) {
+    public static void rightTriangleGape(int weight) {
+        for (int i = 0; i < weight; i++) {
             for (int j = -i; j < 1; j++) { //отступ
                 System.out.print(" ");
             }
 
-            for (int j = i; j < 7; j++){ //левая и верхние стороны
+            for (int j = i; j < weight-1; j++){ //левая и верхние стороны
                 System.out.print("*");
-                for (int k = i; k < 6; k++) { //тело
+                for (int k = i; k < weight-2; k++) { //тело
                     if (i == 0) {
                         break;
                     } else {

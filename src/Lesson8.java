@@ -24,5 +24,4 @@ public class Lesson8 {
         System.out.println("Длина числа: " + length);
         System.out.println("Сумма чисел: " + sum);
     }
-
 }

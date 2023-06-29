@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Lesson1 {
     /**
      * В заданиях с 1-го по 5-е, используя операторы ветвления и
@@ -12,14 +14,15 @@ public class Lesson1 {
      */
 
     public static void main(String[] args) {
-        rightTriangle();
+        Scanner scanner = new Scanner(System.in);
+        rightTriangle(scanner.nextInt());
         System.out.println();
-        rightTriangleGape();
+        rightTriangleGape(scanner.nextInt());
     }
 
-    public static void rightTriangle() {
-        for (int i = 0; i < 8; i++) {
-            for (int j = i; j < 8; j++) { //отступ
+    public static void rightTriangle(int weight) {
+        for (int i = 0; i < weight; i++) {
+            for (int j = i; j < weight; j++) { //отступ
                 System.out.print(" ");
             }
             for (int j = -i; j < 1; j++){
@@ -29,22 +32,22 @@ public class Lesson1 {
         }
     }
 
-    public static void rightTriangleGape() {
-        for (int i = 0; i < 8; i++) {
-            for (int j = i; j < 8; j++) { //отступ
+    public static void rightTriangleGape(int weight) {
+        for (int i = 0; i < weight; i++) {
+            for (int j = i; j < weight; j++) { //отступ
                 System.out.print(" ");
             }
 
             for (int j = -i; j < 0; j++){ //левая и нижняя части
                 System.out.print("*");
                 for (int k = -i + 1; k < 0; k++) {
-                    if (i == 7) {
+                    if (i == weight-1) {
                         break;
                     } else {
                         System.out.print(" "); //внутренняя часть
                     }
                 }
-                if (i != 7) {
+                if (i != weight-1) {
                     break;
                 }
 
